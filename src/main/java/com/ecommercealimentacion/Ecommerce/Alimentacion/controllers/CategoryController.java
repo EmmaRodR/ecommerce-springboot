@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.*;
 @Tag(name = "Categories", description = "Create, read, update or delete categories")
 @RestController
 @RequestMapping("api/v1/categories")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com/")
 public class CategoryController {
 
     ICategoryService service;

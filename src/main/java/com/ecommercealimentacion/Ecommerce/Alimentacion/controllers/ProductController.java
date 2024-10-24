@@ -27,7 +27,7 @@ import java.util.List;
 @Tag(name = "Products",description = "Create, read, update or delete products")
 @RestController
 @RequestMapping("api/v1/products")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com/")
 public class ProductController {
 
     
@@ -109,7 +109,7 @@ public class ProductController {
     @ApiResponse(responseCode = "400", description = "Bad Request", content =  @Content)
     @ApiResponse(responseCode = "500", description = "Internal Server Error", content =  @Content)
     @SecurityRequirement(name = "Bearer Authentication")
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com/")
     @PatchMapping("/{id}")
     public ResponseEntity<BaseResponseDto<ProductResponseDto>> update (@PathVariable Long id, @RequestBody ProductRequestDto productRequestDto) throws NoElementException{
         return service.update(id,productRequestDto);
@@ -122,6 +122,7 @@ public class ProductController {
     @ApiResponse(responseCode = "500", description = "Internal Server Error", content =  @Content)
     @SecurityRequirement(name = "Bearer Authentication")
     @DeleteMapping("/{id}")
+    @CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com/")
     public ResponseEntity<?> delete (@PathVariable Long id) throws NoElementException {
         return service.delete(id);
     }

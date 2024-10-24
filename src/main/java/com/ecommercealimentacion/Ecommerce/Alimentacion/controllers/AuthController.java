@@ -35,14 +35,14 @@ public class AuthController {
         this.jwtService = jwtService;
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com/")
     @PostMapping("/register")
     @Operation(summary = "Register", description = "Regist a user in the app")
     public ResponseEntity<AuthenticationResponse> register (@Valid @RequestBody RegisterUserRequest userRequest) throws ElementAlreadyExistsException, PasswordNotVerifyException {
         return ResponseEntity.created(null).body(authenticationServiceImpl.register(userRequest));
 
     }
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com/")
     @PostMapping("/authenticate")
     @Operation(summary = "Login", description = "Login user in the app")
      public ResponseEntity<AuthenticationResponse> authenticate (@RequestBody AuthenticationRequest authenticationRequest) throws UsernameNotFound {
@@ -50,7 +50,7 @@ public class AuthController {
 
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com/")
     @GetMapping("/guest-token")
      public ResponseEntity<String> createGuestToken ()   {
 

@@ -32,7 +32,7 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/api/v1/cart")
 @Tag(name = "Cart Controller",description = "Manage the Cart")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com/")
 public class CartController {
 
     private ICartService cartService;
@@ -49,7 +49,7 @@ public class CartController {
     @GetMapping
     @Operation(summary = "Get Cart", description = "Get user Cart")
     @SecurityRequirement(name = "Bearer Authentication")
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com/")
     public ResponseEntity<CartDto> getCart(@Valid @RequestParam(required = false) Long userId,@RequestParam(required = false) String sessionId) throws UsernameNotFound{
       
         CartDto cartDto;
@@ -70,7 +70,7 @@ public class CartController {
     @PostMapping
     @Operation(summary = "Add Product", description = "Add a product to user Cart")
     @SecurityRequirement(name = "Bearer Authentication")
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com/")
 
     public ResponseEntity<CartDto> addProductoToCart(@Valid @RequestParam(required = false) Long userId,@Valid @RequestParam(required = false) String sessionId,@Valid @RequestBody AddItemRequestDto addItemRequestDto) throws UsernameNotFound, NoElementException, ElementAlreadyExistsException {
         
@@ -90,7 +90,7 @@ public class CartController {
     @DeleteMapping
     @SecurityRequirement(name = "Bearer Authentication")
     @Operation(summary = "Remove Product", description = "Remove product of Cart")
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com/")
     public CartDto removeProductoFromCart(@Valid @RequestParam(required = false) Long userId,@Valid @RequestParam(required = false) String sessionId, @RequestBody DeleteItemRequestDto deleteItemRequestDto) throws UsernameNotFound, NoElementException {
        
         if (userId != null) {
@@ -106,7 +106,7 @@ public class CartController {
 
     @PatchMapping
     @SecurityRequirement(name = "Bearer Authentication")
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com/")
     @Operation(summary = "Update product", description = "Update product of Cart")
     public CartDto updateProductoInCart(@Valid @RequestParam(required = false) Long userId,
             @Valid @RequestParam(required = false) String sessionId,
@@ -125,7 +125,7 @@ public class CartController {
     @GetMapping("/merge/{userId}/{sessionId}")
     @Operation(summary = "Merge Carts", description = "Add a product to user Cart")
     @SecurityRequirement(name = "Bearer Authentication")
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com/")
     public CartDto mergeGuestCartToUser(
             @Valid @PathVariable(required = false) Long userId,
             @Valid @PathVariable(required = false) String sessionId) {
