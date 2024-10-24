@@ -1,0 +1,31 @@
+
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+
+  application:
+    name: "Ecommerce-Alimentacion"
+
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      show-sql: true
+      dialect: PostgresSQLDialect
+
+  config:
+    import: optional:file:.env[.properties]
+
+
+logging:
+  level:
+    com.example.Crud: DEBUG
+
+security:
+  jwt:
+    expiration-minutes: 30
+    secret-key: ZXN0YSBlcyBtaSBjbGF2ZSBkZSBhY2NjZXNvIGluIGhhY2tlYWJsZSBsb2NvIG5vIGhheSBtYW5lcmE=
+
+

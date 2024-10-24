@@ -1,0 +1,58 @@
+# Ignore Maven build directory
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Ignorar archivo .env
+.env
+
+# STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# IntelliJ IDEA
+.idea
+*.iws
+*.iml
+*.ipr
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# VS Code
+.vscode/
+
+# Gradle
+/.gradle/
+build/
+
+# Temporary files
+*.log
+*.tmp
+*.swp
+
+# Eclipse
+.settings/
+.classpath
+.project
+.metadata/
+
+# Test results
+/target/surefire-reports/
+
+# OS specific files
+.DS_Store
+Thumbs.db
