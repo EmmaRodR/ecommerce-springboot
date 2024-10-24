@@ -24,7 +24,6 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("api/v1/orders")
-@CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com/")
 @Tag(name = "Order Controller",description = "Create orders")
 public class OrderController {
 
@@ -37,21 +36,18 @@ public class OrderController {
     @PostMapping("/{userId}")
     @SecurityRequirement(name = "Bearer Authentication")
     @Operation(summary = "Create Order", description = "Create a Order")
-    @CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com/")
     public OrderDto createOrder (@PathVariable Long userId) throws UsernameNotFound, ElementAlreadyExistsException {
         return orderService.createOrder(userId);
     }
 
     @GetMapping("/{userId}")
     @SecurityRequirement(name = "Bearer Authentication")
-    @CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com/")
     @Operation(summary = "Get Order By UserId", description = "Get an Order by UserId")
     public OrderDto getOrderByUserId (@PathVariable Long userId) throws UsernameNotFound, NoElementException {
         return orderService.getOrderByUserId(userId);
     }
 
     @PatchMapping("/{userId}")
-    @CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com/")
     @Operation(summary = "Update Order", description = "Update a order")
     @SecurityRequirement(name = "Bearer Authentication")
     public OrderDto updateOrder (@PathVariable Long userId, @Valid @RequestParam int quantity) throws UsernameNotFound {
@@ -59,7 +55,6 @@ public class OrderController {
     }
 
     @DeleteMapping("/{userId}")
-    @CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com/")
     @Operation(summary = "Delete Order", description = "Delete a order")
     @SecurityRequirement(name = "Bearer Authentication")
     public ResponseEntity<?> deleteOrderDto (@PathVariable Long userId) throws UsernameNotFound {
