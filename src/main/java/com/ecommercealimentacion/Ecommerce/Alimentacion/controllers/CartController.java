@@ -67,7 +67,6 @@ public class CartController {
     @PostMapping
     @Operation(summary = "Add Product", description = "Add a product to user Cart")
     @SecurityRequirement(name = "Bearer Authentication")
-
     public ResponseEntity<CartDto> addProductoToCart(@Valid @RequestParam(required = false) Long userId,@Valid @RequestParam(required = false) String sessionId,@Valid @RequestBody AddItemRequestDto addItemRequestDto) throws UsernameNotFound, NoElementException, ElementAlreadyExistsException {
         
         CartDto cartDto;
