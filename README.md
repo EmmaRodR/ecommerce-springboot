@@ -104,11 +104,9 @@ Crear, ver, actualizar o eliminar órdenes.
 
 ---
 
-# Autor
+## Autor
 
-## Emmanuel Rodriguez
-
-[LinkedIn](https://www.linkedin.com/in/emmanuelrodr%C3%ADguezbuzzo/) 
+Emmanuel Rodriguez - [LinkedIn](https://www.linkedin.com/in/emmanuelrodr%C3%ADguezbuzzo/) 
 
 
 
