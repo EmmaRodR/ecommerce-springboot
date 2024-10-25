@@ -1,4 +1,5 @@
-# A first-level heading 🛒 E-commerce API - Backend
+# A first-level heading 
+🛒 E-commerce API - Backend
 Un proyecto backend para una aplicación de ecommerce, desarrollado en Spring Boot y Java. Este API ofrece gestión completa de usuarios, productos, categorías, y pedidos, con una seguridad robusta mediante JWT. El proyecto incluye usuarios de prueba, está documentado con Swagger para facilitar la integración y prueba de endpoints, y utiliza una base de datos PostgreSQL alojada en Render.
 
 📚 Resumen del Proyecto
