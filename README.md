@@ -57,7 +57,6 @@ Para probar rápidamente, se incluyen dos usuarios preconfigurados:
 ### Registro e Inicio de Sesión
 - **`POST /auth/register`**: Registrar un nuevo usuario
 - **`POST /auth/authenticate`**: Iniciar sesión
-- **`GET /auth/guest-token`**: Generar token de invitado
 
 ---
 
