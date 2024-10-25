@@ -46,32 +46,63 @@ Para probar rápidamente, se incluyen dos usuarios preconfigurados:
 
 ## 📋 Endpoints Principales
 
-### Autenticación y Usuarios
-- `POST /api/v1/auth/register`: Registro de nuevos usuarios.
-- `POST /api/v1/auth/login`: Autenticación y generación de JWT.
 
-### Productos
-- `GET /api/v1/products`: Lista de productos.
-- `POST /api/v1/products`: Crea un producto (Solo Administrador).
-- `PATCH /api/v1/products/{id}`: Actualiza un producto (Solo Administrador).
-- `DELETE /api/v1/products/{id}`: Elimina un producto (Solo Administrador).
+### Base URL
+- `https://ecommerce-springboot-backend.onrender.com`
 
-### Categorías
-- `GET /api/v1/categories`: Lista de categorías.
-- `POST /api/v1/categories`: Crea una categoría (Solo Administrador).
-- `PATCH /api/v1/categories/{id}`: Actualiza una categoría (Solo Administrador).
-- `DELETE /api/v1/categories/{id}`: Elimina una categoría (Solo Administrador).
+---
 
-### Carrito y Órdenes
-- `POST /api/v1/cart`: Añadir productos al carrito.
-- `GET /api/v1/cart`: Ver contenido del carrito.
-- `POST /api/v1/orders`: Crear orden de compra a partir del carrito.
+## Authorization
 
-### Gestión de Órdenes
-- `GET /api/v1/orders`: Listado de todas las órdenes.
-- `GET /api/v1/orders/{id}`: Detalle de una orden específica.
-- `PUT /api/v1/orders/{id}`: Actualiza el estado de una orden.
-- `DELETE /api/v1/orders/{id}`: Elimina una orden (Administrador).
+### Register and Login
+- **`POST /auth/register`**: Register a new user
+- **`POST /auth/authenticate`**: Login
+- **`GET /auth/guest-token`**: Generate guest token
+
+---
+
+## Categories
+Create, read, update, or delete categories.
+
+- **`GET /api/v1/categories`**: Get all categories
+- **`POST /api/v1/categories`**: Create a category
+- **`GET /api/v1/categories/{id}`**: Get category by ID
+- **`DELETE /api/v1/categories/{id}`**: Delete a category
+- **`PATCH /api/v1/categories/{id}`**: Update a category
+
+---
+
+## Orders
+Create, view, update, or delete orders.
+
+- **`GET /api/v1/orders/{userId}`**: Get orders by user ID
+- **`POST /api/v1/orders/{userId}`**: Create an order for a user
+- **`DELETE /api/v1/orders/{userId}`**: Delete an order
+- **`PATCH /api/v1/orders/{userId}`**: Update an order
+
+---
+
+## Cart
+Manage cart contents.
+
+- **`GET /api/v1/cart`**: View cart contents
+- **`POST /api/v1/cart`**: Add product to cart
+- **`DELETE /api/v1/cart`**: Remove product from cart
+- **`PATCH /api/v1/cart`**: Update product in cart
+- **`GET /api/v1/cart/merge/{userId}/{sessionId}`**: Merge carts by user ID and session ID
+
+---
+
+## Products
+Create, read, update, or delete products.
+
+- **`GET /api/v1/products`**: Get all products
+- **`POST /api/v1/products`**: Create a new product
+- **`GET /api/v1/products/{id}`**: Get product by ID
+- **`DELETE /api/v1/products/{id}`**: Delete a product
+- **`PATCH /api/v1/products/{id}`**: Update a product
+- **`GET /api/v1/products/productsByName`**: Get products by name
+- **`GET /api/v1/products/productsByCategory`**: Get products by category
 
 ---
 
