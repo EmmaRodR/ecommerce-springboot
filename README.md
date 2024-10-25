@@ -111,3 +111,10 @@ La seguridad se maneja con **Spring Security** y **JWT**. Cada usuario autentica
 
 ```http
 Authorization: Bearer <token_jwt>
+
+---
+
+## 🔒 Author
+
+Emmanuel Rodriguez
+
