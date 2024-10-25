@@ -60,6 +60,18 @@ Para probar rápidamente, se incluyen dos usuarios preconfigurados:
 
 ---
 
+## Productos
+Crear, obtener, actualizar o eliminar productos.
+
+- **`GET /api/v1/products`**: Obtener todos los productos
+- **`POST /api/v1/products`**: Crear un nuevo producto
+- **`GET /api/v1/products/{id}`**: Obtener producto por ID
+- **`DELETE /api/v1/products/{id}`**: Eliminar un producto
+- **`PATCH /api/v1/products/{id}`**: Actualizar un producto
+- **`GET /api/v1/products/productsByName`**: Obtener productos por nombre
+- **`GET /api/v1/products/productsByCategory`**: Obtener productos por categoría
+---
+
 ## Categorías
 Crear, obtener, actualizar o eliminar categorías.
 
@@ -68,16 +80,6 @@ Crear, obtener, actualizar o eliminar categorías.
 - **`GET /api/v1/categories/{id}`**: Obtener categoría por ID
 - **`DELETE /api/v1/categories/{id}`**: Eliminar una categoría
 - **`PATCH /api/v1/categories/{id}`**: Actualizar una categoría
-
----
-
-## Órdenes
-Crear, ver, actualizar o eliminar órdenes.
-
-- **`GET /api/v1/orders/{userId}`**: Obtener órdenes por ID de usuario
-- **`POST /api/v1/orders/{userId}`**: Crear una orden para un usuario
-- **`DELETE /api/v1/orders/{userId}`**: Eliminar una orden
-- **`PATCH /api/v1/orders/{userId}`**: Actualizar una orden
 
 ---
 
@@ -92,17 +94,16 @@ Administrar el contenido del carrito.
 
 ---
 
-## Productos
-Crear, obtener, actualizar o eliminar productos.
+## Órdenes
+Crear, ver, actualizar o eliminar órdenes.
 
-- **`GET /api/v1/products`**: Obtener todos los productos
-- **`POST /api/v1/products`**: Crear un nuevo producto
-- **`GET /api/v1/products/{id}`**: Obtener producto por ID
-- **`DELETE /api/v1/products/{id}`**: Eliminar un producto
-- **`PATCH /api/v1/products/{id}`**: Actualizar un producto
-- **`GET /api/v1/products/productsByName`**: Obtener productos por nombre
-- **`GET /api/v1/products/productsByCategory`**: Obtener productos por categoría
+- **`GET /api/v1/orders/{userId}`**: Obtener órdenes por ID de usuario
+- **`POST /api/v1/orders/{userId}`**: Crear una orden para un usuario
+- **`DELETE /api/v1/orders/{userId}`**: Eliminar una orden
+- **`PATCH /api/v1/orders/{userId}`**: Actualizar una orden
+
 ---
+
 
 ## 🔒 Seguridad
 
