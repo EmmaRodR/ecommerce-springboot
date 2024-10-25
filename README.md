@@ -47,63 +47,62 @@ Para probar rápidamente, se incluyen dos usuarios preconfigurados:
 ## 📋 Endpoints Principales
 
 
-### Base URL
+### URL Base
 - `https://ecommerce-springboot-backend.onrender.com`
 
 ---
 
-## Authorization
+## Autorización
 
-### Register and Login
-- **`POST /auth/register`**: Register a new user
-- **`POST /auth/authenticate`**: Login
-- **`GET /auth/guest-token`**: Generate guest token
-
----
-
-## Categories
-Create, read, update, or delete categories.
-
-- **`GET /api/v1/categories`**: Get all categories
-- **`POST /api/v1/categories`**: Create a category
-- **`GET /api/v1/categories/{id}`**: Get category by ID
-- **`DELETE /api/v1/categories/{id}`**: Delete a category
-- **`PATCH /api/v1/categories/{id}`**: Update a category
+### Registro e Inicio de Sesión
+- **`POST /auth/register`**: Registrar un nuevo usuario
+- **`POST /auth/authenticate`**: Iniciar sesión
+- **`GET /auth/guest-token`**: Generar token de invitado
 
 ---
 
-## Orders
-Create, view, update, or delete orders.
+## Categorías
+Crear, obtener, actualizar o eliminar categorías.
 
-- **`GET /api/v1/orders/{userId}`**: Get orders by user ID
-- **`POST /api/v1/orders/{userId}`**: Create an order for a user
-- **`DELETE /api/v1/orders/{userId}`**: Delete an order
-- **`PATCH /api/v1/orders/{userId}`**: Update an order
-
----
-
-## Cart
-Manage cart contents.
-
-- **`GET /api/v1/cart`**: View cart contents
-- **`POST /api/v1/cart`**: Add product to cart
-- **`DELETE /api/v1/cart`**: Remove product from cart
-- **`PATCH /api/v1/cart`**: Update product in cart
-- **`GET /api/v1/cart/merge/{userId}/{sessionId}`**: Merge carts by user ID and session ID
+- **`GET /api/v1/categories`**: Obtener todas las categorías
+- **`POST /api/v1/categories`**: Crear una nueva categoría
+- **`GET /api/v1/categories/{id}`**: Obtener categoría por ID
+- **`DELETE /api/v1/categories/{id}`**: Eliminar una categoría
+- **`PATCH /api/v1/categories/{id}`**: Actualizar una categoría
 
 ---
 
-## Products
-Create, read, update, or delete products.
+## Órdenes
+Crear, ver, actualizar o eliminar órdenes.
 
-- **`GET /api/v1/products`**: Get all products
-- **`POST /api/v1/products`**: Create a new product
-- **`GET /api/v1/products/{id}`**: Get product by ID
-- **`DELETE /api/v1/products/{id}`**: Delete a product
-- **`PATCH /api/v1/products/{id}`**: Update a product
-- **`GET /api/v1/products/productsByName`**: Get products by name
-- **`GET /api/v1/products/productsByCategory`**: Get products by category
+- **`GET /api/v1/orders/{userId}`**: Obtener órdenes por ID de usuario
+- **`POST /api/v1/orders/{userId}`**: Crear una orden para un usuario
+- **`DELETE /api/v1/orders/{userId}`**: Eliminar una orden
+- **`PATCH /api/v1/orders/{userId}`**: Actualizar una orden
 
+---
+
+## Carrito
+Administrar el contenido del carrito.
+
+- **`GET /api/v1/cart`**: Ver contenido del carrito
+- **`POST /api/v1/cart`**: Agregar producto al carrito
+- **`DELETE /api/v1/cart`**: Eliminar producto del carrito
+- **`PATCH /api/v1/cart`**: Actualizar producto en el carrito
+- **`GET /api/v1/cart/merge/{userId}/{sessionId}`**: Fusionar carritos por ID de usuario e ID de sesión
+
+---
+
+## Productos
+Crear, obtener, actualizar o eliminar productos.
+
+- **`GET /api/v1/products`**: Obtener todos los productos
+- **`POST /api/v1/products`**: Crear un nuevo producto
+- **`GET /api/v1/products/{id}`**: Obtener producto por ID
+- **`DELETE /api/v1/products/{id}`**: Eliminar un producto
+- **`PATCH /api/v1/products/{id}`**: Actualizar un producto
+- **`GET /api/v1/products/productsByName`**: Obtener productos por nombre
+- **`GET /api/v1/products/productsByCategory`**: Obtener productos por categoría
 ---
 
 ## 🔒 Seguridad
