@@ -104,17 +104,14 @@ Crear, ver, actualizar o eliminar órdenes.
 
 ---
 
+# Autor
 
-## 🔒 Seguridad
+## Emmanuel Rodriguez
 
-La seguridad se maneja con **Spring Security** y **JWT**. Cada usuario autenticado recibe un token JWT para autorizarse en endpoints protegidos:
+[LinkedIn](https://www.linkedin.com/in/emmanuelrodr%C3%ADguezbuzzo/) 
 
-```http
-Authorization: Bearer <token_jwt>
 
----
 
-## 🔒 Author
 
-Emmanuel Rodriguez
+
 
