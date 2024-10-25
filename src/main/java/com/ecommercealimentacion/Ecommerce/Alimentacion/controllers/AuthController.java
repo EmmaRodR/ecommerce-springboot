@@ -24,7 +24,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/auth")
 @Tag(name = "Authorization",description = "Register and Login")
-@CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com")
 public class AuthController {
 
     private final AuthenticationServiceImpl authenticationServiceImpl;
@@ -44,7 +43,6 @@ public class AuthController {
     }
 
     @PostMapping("/authenticate")
-    @CrossOrigin(origins = "https://ecommerce-reactfrontend.onrender.com")
     @Operation(summary = "Login", description = "Login user in the app")
      public ResponseEntity<AuthenticationResponse> authenticate (@RequestBody AuthenticationRequest authenticationRequest) throws UsernameNotFound {
          return ResponseEntity.ok(authenticationServiceImpl.login(authenticationRequest));

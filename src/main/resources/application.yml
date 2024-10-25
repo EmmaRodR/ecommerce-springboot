@@ -1,4 +1,3 @@
-
 spring:
   datasource:
     url: ${SPRING_DATASOURCE_URL}
@@ -9,19 +8,14 @@ spring:
   application:
     name: "Ecommerce-Alimentacion"
 
-
   jpa:
     hibernate:
       ddl-auto: create-drop
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
 
-
-      
-
   config:
     import: optional:file:.env[.properties]
-
 
 logging:
   level:
@@ -31,4 +25,3 @@ security:
   jwt:
     expiration-minutes: 30
     secret-key: ZXN0YSBlcyBtaSBjbGF2ZSBkZSBhY2NjZXNvIGluIGhhY2tlYWJsZSBsb2NvIG5vIGhheSBtYW5lcmE=
-
