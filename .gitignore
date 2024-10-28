@@ -6,6 +6,7 @@ target/
 
 # Ignorar archivo .env
 .env
+.docker-compòse.yml
 
 # STS
 .apt_generated
