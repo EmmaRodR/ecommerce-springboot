@@ -90,7 +90,6 @@ public class CartServiceImpl implements ICartService {
             throw new ElementAlreadyExistsException("The product is already in the cart.");
         }
 
-        // Crea el CartItem
         CartItem cartItem = CartItem.builder()
                 .cart(cart)
                 .product(product)
@@ -114,7 +113,7 @@ public class CartServiceImpl implements ICartService {
     public CartDto removeProductInCart(Long userId, DeleteItemRequestDto deleteItemRequestDto)
             throws UsernameNotFound, NoElementException {
 
-        // Buscar el carrito del usuario
+        // Search for cart user
         Cart cart = cartRepository.findByuserId(userId);
 
         if (cart == null) {

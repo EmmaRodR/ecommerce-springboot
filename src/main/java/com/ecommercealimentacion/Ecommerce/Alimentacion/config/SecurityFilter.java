@@ -51,9 +51,10 @@ public class SecurityFilter {
                                                                                      .accessDeniedHandler(customAccessDeniedHandler))
                 .authorizeHttpRequests(authConfig -> {
 
+                    //Authentication Swagger
                     authConfig.requestMatchers(
                         "/v3/api-docs/**",
-                        "/swagger-ui/**",
+                        "/swagger-ui/**",                                                           
                         "/swagger-ui.html"
                     ).permitAll();
 

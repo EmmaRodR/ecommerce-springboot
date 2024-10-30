@@ -23,5 +23,5 @@ logging:
 
 security:
   jwt:
-    expiration-minutes: 30
+    expiration-minutes: 1
     secret-key: ZXN0YSBlcyBtaSBjbGF2ZSBkZSBhY2NjZXNvIGluIGhhY2tlYWJsZSBsb2NvIG5vIGhheSBtYW5lcmE=

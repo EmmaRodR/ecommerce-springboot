@@ -3,8 +3,8 @@ package com.ecommercealimentacion.Ecommerce.Alimentacion.exceptions.especificExc
 
 public class TokenExpiredException extends Exception {
 
-    public TokenExpiredException (String msg) {
-        super(msg);
+    public TokenExpiredException (String msg, Throwable cause) {
+        super(msg,cause);
     }
 
 }

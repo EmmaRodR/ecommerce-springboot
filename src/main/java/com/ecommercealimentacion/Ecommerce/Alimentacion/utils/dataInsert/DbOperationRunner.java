@@ -27,7 +27,6 @@ public class DbOperationRunner implements CommandLineRunner {
      public PasswordEncoder passwordEncoder;
 
 
-
     public DbOperationRunner (ICategoryRepository categoryRepository,IProductRepository productRepository,PasswordEncoder passwordEncoder,UserRepository userRepository) {
         this.categoryRepository = categoryRepository;
         this.productRepository = productRepository;
@@ -36,19 +35,19 @@ public class DbOperationRunner implements CommandLineRunner {
     }
 
     public void run(String... args) throws Exception {
-
-
+        
+        // Creacion usuario CUSTOMER (Guest).
         User userInvitado = new User();
-        userInvitado.setUsername("Invitado");
-        userInvitado.setEmail("invitado@gmail.com");
-        userInvitado.setPassword(passwordEncoder.encode("Invitado123"));
+        userInvitado.setUsername("Guest");
+        userInvitado.setEmail("guest@gmail.com");
+        userInvitado.setPassword(passwordEncoder.encode("Guest12345"));
         userInvitado.setRole(Role.CUSTOMER);
 
         // Creacion usuario ADMIN.
         User userAdmin = new User();
         userAdmin.setUsername("Admin");
         userAdmin.setEmail("admin@gmail.com");
-        userAdmin.setPassword(passwordEncoder.encode("ADMIN12345"));
+        userAdmin.setPassword(passwordEncoder.encode("Admin12345"));
         userAdmin.setRole(Role.ADMIN);
 
         userRepository.save(userInvitado);

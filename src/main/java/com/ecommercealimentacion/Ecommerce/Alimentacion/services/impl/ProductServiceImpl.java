@@ -54,7 +54,6 @@ public class ProductServiceImpl implements IProductService {
                 .build();
     }
 
-    // No utilizado de momento en el frontend
     @Override
     public List<ProductResponseDto> getProductsByCategory(String name) throws NoElementException {
 
@@ -71,7 +70,6 @@ public class ProductServiceImpl implements IProductService {
         return productResponseDtos;
     }
 
-    // No utilizado de momento en el frontend
     @Override
     public List<ProductResponseDto> getProductsByName(String name) throws NoElementException {
 

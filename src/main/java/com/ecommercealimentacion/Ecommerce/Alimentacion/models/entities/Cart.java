@@ -25,7 +25,7 @@ public class Cart {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 
-    @Column(name = "session_id", nullable = true) // Solo se usa para carritos de invitados
+    @Column(name = "session_id", nullable = true) // Only used for guest cart
     private String sessionId;
 
     @OneToMany(mappedBy = "cart",cascade = CascadeType.ALL)

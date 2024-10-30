@@ -2,11 +2,10 @@ package com.ecommercealimentacion.Ecommerce.Alimentacion.exceptions.especificExc
 
 public class UsernameNotFound extends Exception {
 
-    public UsernameNotFound (String msg) {
+    public UsernameNotFound(String msg) {
 
         super(msg);
 
     }
-
 
 }

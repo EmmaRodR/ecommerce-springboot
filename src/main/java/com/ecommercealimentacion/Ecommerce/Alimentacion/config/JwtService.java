@@ -1,7 +1,11 @@
 package com.ecommercealimentacion.Ecommerce.Alimentacion.config;
 
+import com.ecommercealimentacion.Ecommerce.Alimentacion.exceptions.especificExceptions.TokenExpiredException;
+import com.ecommercealimentacion.Ecommerce.Alimentacion.exceptions.especificExceptions.TokenValidationException;
 import com.ecommercealimentacion.Ecommerce.Alimentacion.models.entities.User;
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -19,7 +23,6 @@ public class JwtService {
 
     @Value("${security.jwt.expiration-minutes}")
     private Long EXPIRATION_MINUTES;
-
 
     @Value("${security.jwt.secret-key}")
     private String SECRET_KEY;
@@ -65,9 +68,7 @@ public class JwtService {
 
     public SecretKey generateKey () {
         byte[] secreateAsBytes = Decoders.BASE64.decode(SECRET_KEY);
-
         return Keys.hmacShaKeyFor(secreateAsBytes);
-
     }
 
     public String extractUsername(String jwt) {
@@ -91,20 +92,26 @@ public class JwtService {
         return extractAllClaims(token).getExpiration();
     }
 
-    public boolean isTokenValid(String token, User user) {
+    public boolean isTokenValid(String token, User user) throws TokenExpiredException {
 
         try {
             Claims claims = extractAllClaims(token);
-
             String usernameInToken = claims.getSubject();
 
+            //Verifica si el token pertenece al usuario y si no expiro.
             return usernameInToken.equals(user.getUsername()) && !isTokenExpired(token);
 
+        } catch (ExpiredJwtException e) {
+            throw new TokenExpiredException("Token has expired", e);
+        } catch (JwtException e) {
+            // Manejo general de excepciones JWT
+            throw new TokenValidationException("Error en la validación del token.", e);
         } catch (Exception e) {
-            System.out.println(e);
-            return false;
+            // Manejo de cualquier otra excepción inesperada
+            throw new TokenValidationException("Ocurrió un error inesperado al validar el token.", e);
         }
-    }
+    
+}
 
 
 

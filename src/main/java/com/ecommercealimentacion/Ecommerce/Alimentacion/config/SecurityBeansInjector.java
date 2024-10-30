@@ -22,14 +22,14 @@ public class SecurityBeansInjector {
         this.userRepository = userRepository;
     }
 
-
     @Bean
-    public AuthenticationManager authenticationManager (AuthenticationConfiguration authenticationConfiguration) throws Exception {
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
+            throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
     @Bean
-    public AuthenticationProvider authenticationProvider () {
+    public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setUserDetailsService(userDetailsService());
         provider.setPasswordEncoder(passwordEncoder());
@@ -43,16 +43,12 @@ public class SecurityBeansInjector {
     }
 
     @Bean
-    public UserDetailsService userDetailsService () {
+    public UserDetailsService userDetailsService() {
         return username -> {
             return userRepository.findByusername(username)
-                    .orElseThrow(()-> new RuntimeException("User not found"));
+                    .orElseThrow(() -> new RuntimeException("User not found"));
         };
 
     }
-
-
-
-
 
 }

@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
 
    
-    private String frontendUrl = "https://ecommerce-reactfrontend.onrender.com";
+    private String frontendUrl = "http://localhost:5173";
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {

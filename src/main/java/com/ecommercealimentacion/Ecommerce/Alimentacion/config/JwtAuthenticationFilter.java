@@ -1,5 +1,6 @@
 package com.ecommercealimentacion.Ecommerce.Alimentacion.config;
 
+import com.ecommercealimentacion.Ecommerce.Alimentacion.exceptions.especificExceptions.TokenExpiredException;
 import com.ecommercealimentacion.Ecommerce.Alimentacion.models.entities.User;
 import com.ecommercealimentacion.Ecommerce.Alimentacion.repositories.UserRepository;
 
@@ -33,8 +34,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
 
-        // obtains header that contains jwt
-
+        // Obtiene el header con el nombre Authorization
         String authHeader = request.getHeader("Authorization"); // Bearer jwt
 
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
@@ -43,12 +43,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             return;
         }
 
-        // obtains jwt token
+        //Obtiene el token
         String jwt = authHeader.split(" ")[1];
 
         try {
-
-            // obtain subject/username in jwt
+       
             String username = jwtService.extractUsername(jwt);
 
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
@@ -57,7 +56,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 User user = userRepository.findByusername(username).orElse(null);
 
                 if (user != null && jwtService.isTokenValid(jwt, user)) {
-                    // Create auth token
+                    
                     UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
                             username, null, user.getAuthorities());
 
@@ -65,18 +64,16 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 }
             }
 
-        } catch (ExpiredJwtException e) {
+        } catch (ExpiredJwtException | TokenExpiredException e) {
             handleExpiredToken(response, e);
             return;
-
         }
 
-        // execute rest of filters
         filterChain.doFilter(request, response);
 
     }
 
-    public void handleExpiredToken(HttpServletResponse response, ExpiredJwtException e
+    public void handleExpiredToken(HttpServletResponse response, Exception e
              ) throws IOException {
         
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);

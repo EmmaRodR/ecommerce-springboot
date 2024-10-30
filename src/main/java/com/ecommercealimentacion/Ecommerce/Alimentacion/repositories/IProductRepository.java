@@ -24,7 +24,6 @@ public interface IProductRepository extends JpaRepository<Product, Long> {
     List<Product> findByNameFindCoincidence(String name);
 
 
-
     @Query(value = "SELECT * FROM products WHERE categorie_id = :id", nativeQuery = true)
     List<Product> findByCategory(Long id);
 
