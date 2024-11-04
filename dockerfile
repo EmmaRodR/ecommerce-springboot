@@ -7,5 +7,5 @@ RUN mvn clean package -DskipTests
 
 # Usa una imagen ligera de JDK para ejecutar el jar
 FROM eclipse-temurin:17-jdk-jammy
-COPY --from=build /app/target/Ecommerce-Alimentacion-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/ecommercespringboot-0.0.1-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]

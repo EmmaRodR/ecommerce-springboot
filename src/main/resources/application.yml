@@ -6,7 +6,7 @@ spring:
     driver-class-name: org.postgresql.Driver
 
   application:
-    name: "Ecommerce-Alimentacion"
+    name: "Ecommerce-SpringBoot"
 
   jpa:
     hibernate:
@@ -23,5 +23,5 @@ logging:
 
 security:
   jwt:
-    expiration-minutes: 1
+    expiration-minutes: 30
     secret-key: ZXN0YSBlcyBtaSBjbGF2ZSBkZSBhY2NjZXNvIGluIGhhY2tlYWJsZSBsb2NvIG5vIGhheSBtYW5lcmE=
