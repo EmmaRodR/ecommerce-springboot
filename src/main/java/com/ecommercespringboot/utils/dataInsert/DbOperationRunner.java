@@ -69,13 +69,13 @@ public class DbOperationRunner implements CommandLineRunner {
         categoryRepository.save(category5);
 
         // Creación de productos para cada categoría
-        Product product1 = new Product("Intel Core i7-11700K", BigDecimal.valueOf(350.00), category1,
+        Product product1 = new Product("Intel Core i7-11700K", BigDecimal.valueOf(550.00), category1,
                 "https://i.postimg.cc/0NdqjXhT/I7.jpg");
-        Product product2 = new Product("AMD Ryzen 5 5600X", BigDecimal.valueOf(300.00), category1,
+        Product product2 = new Product("AMD Ryzen 5 5600X", BigDecimal.valueOf(400.00), category1,
                 "https://i.postimg.cc/tCF0BCz3/RYZEN5.webp");
-        Product product3 = new Product("Intel Core i5-11400F", BigDecimal.valueOf(200.00), category1,
+        Product product3 = new Product("Intel Core i5-11400F", BigDecimal.valueOf(452.00), category1,
                 "https://i.postimg.cc/3rs5jD2r/I5.jpg");
-        Product product4 = new Product("AMD Ryzen 7 5800X", BigDecimal.valueOf(400.00), category1,
+        Product product4 = new Product("AMD Ryzen 7 5800X", BigDecimal.valueOf(538.00), category1,
                 "https://i.postimg.cc/sfQCZJQ0/R7.webp");
 
         productRepository.save(product1);
@@ -83,13 +83,13 @@ public class DbOperationRunner implements CommandLineRunner {
         productRepository.save(product3);
         productRepository.save(product4);
 
-        Product product5 = new Product("MSI B450 TOMAHAWK MAX", BigDecimal.valueOf(120.00), category2,
+        Product product5 = new Product("MSI B450 TOMAHAWK MAX", BigDecimal.valueOf(220.00), category2,
                 "https://i.postimg.cc/J4rn3Z1V/MSIMOTHER.jpg");
         Product product6 = new Product("ASUS ROG STRIX B550-F", BigDecimal.valueOf(180.00), category2,
                 "https://i.postimg.cc/J4php0ny/ASUSMOTHER.jpg");
         Product product7 = new Product("Gigabyte AORUS X570", BigDecimal.valueOf(250.00), category2,
                 "https://i.postimg.cc/3x6xHq2Y/GIGAAORUS.png");
-        Product product8 = new Product("ASRock B450M PRO4", BigDecimal.valueOf(100.00), category2,
+        Product product8 = new Product("ASRock B450M PRO4", BigDecimal.valueOf(175.00), category2,
                 "https://i.postimg.cc/RZqZym6g/ASROCKMOTHER.png");
 
         productRepository.save(product5);

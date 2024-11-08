@@ -1,6 +1,16 @@
 # 🛒 E-commerce API - Backend Spring Boot
 
-Este es proyecto backend para una aplicación de ecommerce, desarrollado en **Spring Boot** y **Java**. Este API ofrece gestión completa de usuarios, productos, categorías, y ordenes, con una seguridad robusta mediante **JWT**. El proyecto incluye usuarios de prueba, está documentado con Swagger para facilitar la integración y prueba de endpoints, y utiliza una base de datos **PostgreSQL** alojada en Render.
+Proyecto backend para una aplicación de ecommerce, desarrollado en **Spring Boot** y **Java**. Este API ofrece gestión completa de usuarios, productos, categorías, y ordenes, con una seguridad robusta mediante **JWT**. El proyecto incluye usuarios de prueba, está documentado con Swagger para facilitar la integración y prueba de endpoints, y utiliza una base de datos **PostgreSQL** alojada en Render.
+
+---
+
+
+  🔹 **Explora la API con Swagger**:  
+Para probar y documentar los endpoints de la API, he utilizado **Swagger**, que facilita la interacción y exploración de los recursos disponibles. Puedes ver la documentación en tiempo real aquí: [Documentación de Swagger](https://ecommerce-springboot-backend.onrender.com/swagger-ui.html).
+
+Los tiempos de espera y rendimiento de la app pueden estar condicionados por el servidor donde esta alojado. Talvez demore en realizar ciertas acciones o cargas de elementos.
+
+
 
 ---
 
@@ -38,8 +48,8 @@ Para probar rápidamente, se incluyen dos usuarios preconfigurados:
   - Rol: `ADMIN`
 
 - **Invitado**:
-  - Usuario: `Invitado`
-  - Contraseña: `Invitado123`
+  - Usuario: `Customer`
+  - Contraseña: `Customer12345`
   - Rol: `CUSTOMER`
 
 ---
@@ -106,10 +116,4 @@ Crear, ver, actualizar o eliminar órdenes.
 
 ## Autor
 
-Emmanuel Rodriguez - [LinkedIn](https://www.linkedin.com/in/emmanuelrodr%C3%ADguezbuzzo/) 
-
-
-
-
-
-
+Emmanuel Rodriguez - [LinkedIn](https://www.linkedin.com/in/emmanuelrodr%C3%ADguezbuzzo/)
