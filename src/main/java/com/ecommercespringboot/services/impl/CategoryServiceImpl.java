@@ -56,7 +56,6 @@ public class CategoryServiceImpl implements ICategoryService {
                 .numberOfElements(categoriesInBd.getNumberOfElements())
                 .content(categoryDtos)
                 .build();
-
     }
 
     @Override

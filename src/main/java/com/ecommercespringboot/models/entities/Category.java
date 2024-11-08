@@ -20,10 +20,9 @@ public class Category {
     @OneToMany(mappedBy = "category", cascade = { CascadeType.MERGE, CascadeType.PERSIST })
     private List<Product> products;
 
-    public Category(Long id, String name, List<Product> products) {
+    public Category(Long id, String name) {
         this.id = id;
         this.name = name;
-        this.products = products;
     }
 
     public Category(String name) {

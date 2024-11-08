@@ -53,7 +53,6 @@ public class AuthenticationServiceImpl implements IAuthService {
         user.setPassword(passwordEncoder.encode(request.getPassword()));
         user.setRole(request.getRole());
 
-        userRepository.save(user);
         var userId = userRepository.save(user).getId();
 
         return new AuthenticationResponse(userId, null, HttpStatus.CREATED.toString(), user.getUsername(),
