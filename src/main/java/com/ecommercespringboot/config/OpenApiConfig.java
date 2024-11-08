@@ -24,8 +24,8 @@ import io.swagger.v3.oas.annotations.security.SecurityScheme;
              - Contraseña: `Admin12345`
             
             Custom Client
-             - Usuario: `Custom`
-             - Contraseña: `Custom12345`
+             - Usuario: `Customer`
+             - Contraseña: `Customer12345`
 
             Utiliza estos usuarios para probar los diferentes roles y permisos dentro de la API.
          """,

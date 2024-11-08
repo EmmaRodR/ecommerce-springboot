@@ -36,11 +36,11 @@ public class DbOperationRunner implements CommandLineRunner {
 
     public void run(String... args) throws Exception {
         
-        // Creacion usuario CUSTOMER (Guest).
+        // Creacion usuario CUSTOMER (Customer Client).
         User userInvitado = new User();
-        userInvitado.setUsername("Guest");
-        userInvitado.setEmail("guest@gmail.com");
-        userInvitado.setPassword(passwordEncoder.encode("Guest12345"));
+        userInvitado.setUsername("Customer");
+        userInvitado.setEmail("customer@gmail.com");
+        userInvitado.setPassword(passwordEncoder.encode("Customer12345"));
         userInvitado.setRole(Role.CUSTOMER);
 
         // Creacion usuario ADMIN.
