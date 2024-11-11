@@ -47,7 +47,6 @@ public class CartServiceImpl implements ICartService {
     }
 
     @Override
-    @Transactional(readOnly = true)
     public CartDto getCart(Long userId) throws UsernameNotFound {
 
         Cart cart = cartRepository.findByuserId(userId);
