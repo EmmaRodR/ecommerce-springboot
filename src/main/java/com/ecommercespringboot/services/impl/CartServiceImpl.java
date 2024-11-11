@@ -51,7 +51,7 @@ public class CartServiceImpl implements ICartService {
         Cart cart = cartRepository.findByuserId(userId);
 
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new UsernameNotFound("Not found a user with the id: "+userId));
+                .orElseThrow(() -> new UsernameNotFound("Not found a user with the id: " + userId));
 
         // Crea el carrito si no existe
         if (cart == null) {
@@ -70,11 +70,11 @@ public class CartServiceImpl implements ICartService {
             throws UsernameNotFound, NoElementException, ElementAlreadyExistsException {
 
         Cart cart = cartRepository.findByuserId(userId);
-       
-        User user = userRepository.findById(userId)
-        .orElseThrow(() -> new UsernameNotFound("Not found a user with the id: "+userId));
 
-        if(cart == null) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new UsernameNotFound("Not found a user with the id: " + userId));
+
+        if (cart == null) {
             cart = new Cart();
             cart.setUser(user);
             cartRepository.save(cart);
@@ -120,25 +120,19 @@ public class CartServiceImpl implements ICartService {
             throw new NoElementException("No cart found for user ID: " + userId);
         }
 
-        // Buscar el ítem del carrito por el ID del producto
         CartItem cartItem = cartItemRepository
                 .findByProductIdAndCartId(deleteItemRequestDto.getProductId(), cart.getId())
                 .orElseThrow(() -> new NoElementException("The item not exists in the cart"));
 
-        // Actualizar la cantidad total y el monto total del carrito
         cart.setQuantity(cart.getQuantity() - cartItem.getQuantity());
-        cart.setTotalAmount(cart.getTotalAmount() - cartItem.getTotalAmount());
+        recalculateCartTotals(cart);
 
-        // Eliminar el ítem del carrito
         cart.getItems().removeIf(item -> item.getProduct().getId().equals(deleteItemRequestDto.getProductId()));
 
-        // Eliminar el ítem del repositorio
         cartItemRepository.deleteById(cartItem.getId());
 
-        // Guardar los cambios en el carrito
         cartRepository.save(cart);
 
-        // Mapear y devolver el carrito actualizado como DTO
         return modelMapper.map(cart, CartDto.class);
     }
 
@@ -169,21 +163,14 @@ public class CartServiceImpl implements ICartService {
     }
 
     private void recalculateCartTotals(Cart cart) {
-       
+
         double totalCartAmount = 0.0;
-    
+
         for (CartItem item : cart.getItems()) {
             totalCartAmount += item.getTotalAmount();
         }
-    
+
         cart.setTotalAmount(totalCartAmount);
     }
-
-
-
-
-
-
-
 
 }
