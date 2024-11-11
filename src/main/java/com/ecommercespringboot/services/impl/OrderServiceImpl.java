@@ -54,7 +54,6 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
-    @Transactional
     public OrderDto createOrder(Long userId) throws UsernameNotFound,ElementAlreadyExistsException {
 
         User user = userRepository.findById(userId)
