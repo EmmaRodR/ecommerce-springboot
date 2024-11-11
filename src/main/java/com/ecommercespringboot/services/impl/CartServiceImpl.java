@@ -59,7 +59,6 @@ public class CartServiceImpl implements ICartService {
             Cart newCart = new Cart();
             newCart.setUser(user);
             newCart.setTotalAmount(0);
-            newCart.setItems(null);
             cartRepository.save(newCart);
 
             return modelMapper.map(newCart, CartDto.class);
