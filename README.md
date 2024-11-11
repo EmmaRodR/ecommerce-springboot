@@ -2,9 +2,9 @@
 
 Este es un proyecto personal backend para una aplicación de ecommerce, desarrollado en **Spring Boot** y **Java**. Este API ofrece gestión completa de usuarios, productos, categorías, y ordenes, con una seguridad robusta mediante **JWT**. El proyecto incluye usuarios de prueba, está documentado con Swagger para facilitar la integración y prueba de endpoints, y utiliza una base de datos **PostgreSQL** alojada en Render. 
 
-La idea principal de este proyecto es asentar las bases y buenas practicas de lo que es el framework de Spring Boot tan utilizado hoy en dia. Asi como conocimientos de Java.
----
+La idea principal de este proyecto fue asentar las bases y buenas practicas de lo que es el framework de Spring Boot tan utilizado hoy en dia. Utilizando Hibernate a nivel ORM y Security para manejar los Login y Registros de usuarios añadiendo JWT para mayor seguridad.
 
+---
 
   🔹 **Explora la API con Swagger**:  
   
