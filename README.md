@@ -11,6 +11,20 @@ Para probar y documentar los endpoints de la API, he utilizado **Swagger**, que 
 Los tiempos de espera y rendimiento de la app pueden estar condicionados por el servidor donde esta alojado. Talvez demore en realizar ciertas acciones o cargas de elementos.
 
 
+### Home
+![Texto alternativo](https://i.postimg.cc/2St5BS75/swaggerhome.png)
+### Auth
+![Texto alternativo](https://i.postimg.cc/fRyLL9XF/auth.png)
+### Products
+![Texto alternativo](https://i.postimg.cc/3JnNYBym/Products-Swagger.png)
+### Categories
+![Texto alternativo](https://i.postimg.cc/SNyRB5Km/Categorieswagger.png)
+### Cart
+![Texto alternativo](https://i.postimg.cc/HW0jPHdS/Cartswagger.png)
+### Orders
+![Texto alternativo](https://i.postimg.cc/0jCQ6GVg/ordersswagger.png)
+
+
 
 ---
 
