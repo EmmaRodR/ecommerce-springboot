@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.ecommercespringboot.exceptions.especificExceptions.ElementAlreadyExistsException;
 import com.ecommercespringboot.exceptions.especificExceptions.NoElementException;
@@ -104,8 +103,6 @@ public class CartServiceImpl implements ICartService {
         cart.getItems().add(cartItem);
         cart.setQuantity(cart.getQuantity() + cartItem.getQuantity());
         cart.setTotalAmount(cart.getTotalAmount() + cartItem.getTotalAmount());
-
-        recalculateCartTotals(cart);
 
         cartRepository.save(cart);
 
