@@ -57,6 +57,8 @@ public class CartServiceImpl implements ICartService {
         if (cart == null) {
             Cart newCart = new Cart();
             newCart.setUser(user);
+            newCart.setTotalAmount(0);
+            newCart.setItems(null);
             cartRepository.save(newCart);
 
             return modelMapper.map(newCart, CartDto.class);
@@ -101,7 +103,7 @@ public class CartServiceImpl implements ICartService {
 
         cart.getItems().add(cartItem);
         cart.setQuantity(cart.getQuantity() + cartItem.getQuantity());
-        recalculateCartTotals(cart);
+        cart.setTotalAmount(cart.getTotalAmount() + cartItem.getTotalAmount());
 
         cartRepository.save(cart);
 
@@ -125,7 +127,7 @@ public class CartServiceImpl implements ICartService {
                 .orElseThrow(() -> new NoElementException("The item not exists in the cart"));
 
         cart.setQuantity(cart.getQuantity() - cartItem.getQuantity());
-        recalculateCartTotals(cart);
+        cart.setTotalAmount(cart.getTotalAmount() - cartItem.getTotalAmount());
 
         cart.getItems().removeIf(item -> item.getProduct().getId().equals(deleteItemRequestDto.getProductId()));
 
