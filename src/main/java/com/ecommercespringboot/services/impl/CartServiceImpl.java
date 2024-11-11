@@ -108,9 +108,9 @@ public class CartServiceImpl implements ICartService {
         cart.setQuantity(cart.getQuantity() + cartItem.getQuantity());
         cart.setTotalAmount(cart.getTotalAmount() + cartItem.getTotalAmount());
 
-        cartRepository.save(cart);
-
         recalculateCartTotals(cart);
+
+        cartRepository.save(cart);
 
 
         return modelMapper.map(cart, CartDto.class);
