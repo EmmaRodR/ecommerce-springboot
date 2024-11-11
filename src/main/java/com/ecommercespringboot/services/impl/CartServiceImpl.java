@@ -101,7 +101,7 @@ public class CartServiceImpl implements ICartService {
 
         cart.getItems().add(cartItem);
         cart.setQuantity(cart.getQuantity() + cartItem.getQuantity());
-        cart.setTotalAmount(cart.getTotalAmount() + cartItem.getTotalAmount());
+        recalculateCartTotals(cart);
 
         cartRepository.save(cart);
 

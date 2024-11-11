@@ -8,6 +8,7 @@ import java.util.Optional;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ecommercespringboot.exceptions.especificExceptions.ElementAlreadyExistsException;
 import com.ecommercespringboot.exceptions.especificExceptions.NoElementException;
@@ -53,6 +54,7 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
+    @Transactional
     public OrderDto createOrder(Long userId) throws UsernameNotFound,ElementAlreadyExistsException {
 
         User user = userRepository.findById(userId)
@@ -91,6 +93,9 @@ public class OrderServiceImpl implements IOrderService {
         orderItemRepository.saveAll(orderItems);
         order.setOrderItems(orderItems);
         orderRepository.save(order);
+
+        cart.getItems().clear(); 
+        cartRepository.save(cart);
 
         return orderDtoMapper.convertToDto(order);
     }
