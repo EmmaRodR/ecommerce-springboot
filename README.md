@@ -1,11 +1,13 @@
 # 🛒 E-commerce API - Backend Spring Boot
 
-Proyecto backend para una aplicación de ecommerce, desarrollado en **Spring Boot** y **Java**. Este API ofrece gestión completa de usuarios, productos, categorías, y ordenes, con una seguridad robusta mediante **JWT**. El proyecto incluye usuarios de prueba, está documentado con Swagger para facilitar la integración y prueba de endpoints, y utiliza una base de datos **PostgreSQL** alojada en Render.
+Este es un proyecto personal backend para una aplicación de ecommerce, desarrollado en **Spring Boot** y **Java**. Este API ofrece gestión completa de usuarios, productos, categorías, y ordenes, con una seguridad robusta mediante **JWT**. El proyecto incluye usuarios de prueba, está documentado con Swagger para facilitar la integración y prueba de endpoints, y utiliza una base de datos **PostgreSQL** alojada en Render. 
 
+La idea principal de este proyecto es asentar las bases y buenas practicas de lo que es el framework de Spring Boot tan utilizado hoy en dia. Asi como conocimientos de Java.
 ---
 
 
   🔹 **Explora la API con Swagger**:  
+  
 Para probar y documentar los endpoints de la API, he utilizado **Swagger**, que facilita la interacción y exploración de los recursos disponibles. Puedes ver la documentación en tiempo real aquí: [Documentación de Swagger](https://ecommerce-springboot-backend.onrender.com/swagger-ui.html).
 
 Los tiempos de espera y rendimiento de la app pueden estar condicionados por el servidor donde esta alojado. Talvez demore en realizar ciertas acciones o cargas de elementos.
@@ -34,7 +36,7 @@ Los tiempos de espera y rendimiento de la app pueden estar condicionados por el 
 - **Autenticación Segura**: Implementada con JWT para manejar roles de administrador y cliente.
 - **Carrito y Órdenes**: Carrito de compras y generación de órdenes de compra.
 - **Documentación Swagger**: Explora la API con Swagger en tiempo real.
-- **Usuarios de Prueba**: Usuarios predeterminados (Admin e Invitado) para pruebas rápidas.
+- **Usuarios de Prueba**: Usuarios predeterminados (Admin e Customer) para pruebas rápidas.
 
 ---
 
