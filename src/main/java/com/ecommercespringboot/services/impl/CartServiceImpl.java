@@ -69,7 +69,6 @@ public class CartServiceImpl implements ICartService {
     }
 
     @Override
-    @Transactional
     public CartDto addProductToCart(Long userId, AddItemRequestDto addItemRequestDto)
             throws UsernameNotFound, NoElementException, ElementAlreadyExistsException {
 
@@ -117,7 +116,6 @@ public class CartServiceImpl implements ICartService {
     }
 
     @Override
-    @Transactional
     public CartDto removeProductInCart(Long userId, DeleteItemRequestDto deleteItemRequestDto)
             throws UsernameNotFound, NoElementException {
 
@@ -147,7 +145,6 @@ public class CartServiceImpl implements ICartService {
         return modelMapper.map(cart, CartDto.class);
     }
 
-    @Transactional
     @Override
     public CartDto updateProductFromCart(Long userId, UpdateItemRequestDto updateItemRequestDto)
             throws UsernameNotFound, NoElementException {
