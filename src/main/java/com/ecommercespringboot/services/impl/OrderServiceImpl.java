@@ -94,9 +94,6 @@ public class OrderServiceImpl implements IOrderService {
         order.setOrderItems(orderItems);
         orderRepository.save(order);
 
-        cart.getItems().clear(); 
-        cartRepository.save(cart);
-
         return orderDtoMapper.convertToDto(order);
     }
 
